@@ -5,71 +5,45 @@
 var languageStrings = {
     'en': {
         'translation': {
-            'WELCOME' : "Welcome to Gloucester Guide!",
-            'HELP'    : "Say about, to hear more about the city, or say coffee, breakfast, lunch, or dinner, to hear local restaurant suggestions, or say recommend an attraction, or say, go outside. ",
-            'ABOUT'   : "Gloucester Massachusetts is a city on the Atlantic Ocean.  A popular summer beach destination, Gloucester has a rich history of fishing and ship building.",
+            'WELCOME' : "Welcome to myPDX, your personal guide to Portland Oregon!",
+            'HELP'    : "Say about, to hear more about the city, or say coffee, breakfast, lunch, or dinner, to hear portland restaurant suggestions, or say recommend an attraction, or say, go outside. ",
+            'ABOUT'   : "Portland Oregon is a city between the Willamette and Columbia Rivers.  Popularly known as America's most livable city, Portland is internationally popular with foodies, music lovers and outdoor adventurers.",
             'STOP'    : "Okay, see you next time!"
         }
     }
     // , 'de-DE': { 'translation' : { 'TITLE'   : "Local Helfer etc." } }
 };
 var data = {
-    "city"        : "Gloucester",
-    "state"       : "MA",
-    "postcode"    : "01930",
+    "city"        : "Portland",
+    "state"       : "OR",
+    "postcode"    : "97202",
     "restaurants" : [
-        { "name":"Zeke's Place",
-            "address":"66 East Main Street", "phone": "978-283-0474",
-            "meals": "breakfast, lunch",
-            "description": "A cozy and popular spot for breakfast.  Try the blueberry french toast!"
+        { "name":"Kenny and Zuke's",
+            "address":"1038 SW Stark St", "phone": "503-222-3354",
+            "meals": "breakfast, lunch, dinner",
+            "description": "Voted one of America's top 10 Jewish delis by Foursquare dot com."
         },
-        { "name":"Morning Glory Coffee Shop",
-            "address":"25 Western Avenue", "phone": "978-281-1851",
+        { "name":"Public Domain",
+            "address":"603 SW Broadway", "phone": "503-243-6374",
             "meals": "coffee, breakfast, lunch",
-            "description": "A homestyle diner located just across the street from the harbor sea wall."
+            "description": "A great example of Portlands famous coffee culture at its finest."
         },
-        { "name":"Sugar Magnolias",
-            "address":"112 Main Street", "phone": "978-281-5310",
-            "meals": "breakfast, lunch",
-            "description": "A quaint eatery, popular for weekend brunch.  Try the carrot cake pancakes."
-        },
-        { "name":"Seaport Grille",
-            "address":"6 Rowe Square", "phone": "978-282-9799",
-            "meals": "lunch, dinner",
-            "description": "Serving seafood, steak and casual fare.  Enjoy harbor views on the deck."
-        },
-        { "name":"Latitude 43",
-            "address":"25 Rogers Street", "phone": "978-281-0223",
-            "meals": "lunch, dinner",
-            "description": "Features artsy decor and sushi specials.  Live music evenings at the adjoining Minglewood Tavern."
-        },
-        { "name":"George's Coffee Shop",
-            "address":"178 Washington Street", "phone": "978-281-1910",
-            "meals": "coffee, breakfast, lunch",
-            "description": "A highly rated local diner with generously sized plates."
-        },
-
     ],
     "attractions":[
         {
-            "name": "Whale Watching",
-            "description": "Gloucester has tour boats that depart twice daily from Rogers street at the harbor.  Try either the 7 Seas Whale Watch, or Captain Bill and Sons Whale Watch. ",
+            "name": "Columbia River Gorge",
+            "description": "Columbia River Gorge National Scenic Area runs along I-84 for 80 miles starting just outside Portland.  This four thousand foot canyon includes hundreds of miles of recreation trails and over 90 spectacular waterfalls.",
+            "distance": "10"
+        },
+        {
+            "name": "Washington Park",
+            "description": "Home to the Hoyt Arboretum Oregon Forestry Center and Oregon Zoo, Washington Park is a favorite family destination for Portlanders and visitors alike.  Check out the summer concert series at the zoo from May through September.",
             "distance": "0"
         },
         {
-            "name": "Good Harbor Beach",
-            "description": "Facing the Atlantic Ocean, Good Harbor Beach has huge expanses of soft white sand that attracts hundreds of visitors every day during the summer.",
-            "distance": "2"
-        },
-        {
-            "name": "Rockport",
-            "description": "A quaint New England town, Rockport is famous for rocky beaches, seaside parks, lobster fishing boats, and several art studios.",
-            "distance": "4"
-        },
-        {
-            "name": "Fenway Park",
-            "description": "Home of the Boston Red Sox, Fenway park hosts baseball games From April until October, and is open for tours. ",
-            "distance": "38"
+            "name": "Canon Beach",
+            "description": "One of the Pacific Northwest's best loved beach towns just an hour and an half from Portland, Canon Beach is famous for its generous beach, iconic haystack rock and first rate tide pooling opportunities.",
+            "distance": "60"
         }
     ]
 }
@@ -167,7 +141,7 @@ var handlers = {
 
         var say = 'Try '
             + attraction.name + ', which is '
-            + (attraction.distance == "0" ? 'right downtown. ' : attraction.distance + ' miles away. Have fun! ')
+            + (attraction.distance == "0" ? 'right in town. ' : attraction.distance + ' miles away. Have fun! ')
             + attraction.description;
 
         this.emit(':tell', say);
